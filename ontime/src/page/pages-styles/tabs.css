@@ -1,0 +1,16 @@
+.tab{
+    width: 50%;
+    display: flex; 
+    justify-content: center; align-items: center;
+    background-color: #1a1a1a;
+    color: #d0d0d0;
+    font-size: 22px;
+    border-top: 5px solid #bababa;
+    border-bottom: 5px solid #bababa;
+    cursor: pointer;
+    border-left: 0; border-right: 0;
+}
+.tabSelected{
+    border-top: 5px solid #b58d00;
+    border-bottom: 5px solid #b58d00;
+}

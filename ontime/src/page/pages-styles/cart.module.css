@@ -1,0 +1,118 @@
+.wrapper{
+    width: 100%;
+    display: flex; flex-direction: column;
+    right: 0;
+    z-index: 20;
+    background-color: white;
+    padding: 5px;
+    align-items: center;
+}
+.body{
+    display: flex; flex-direction: column;
+    width: 60%;
+    align-content: center;
+}
+
+
+.cartItemBody{
+    display: flex; flex-direction: row;
+    height: 100px;
+    margin-top: 10px;
+    background-color: #e6e5e243;
+    border: 1px solid rgb(210, 210, 210);
+    align-content: center;
+}
+.productNameGroup{
+    display: flex; flex-direction: column;
+    font-size: 20px;
+    width: 500px;
+}
+.brand{
+    color:#49473f;
+    font-size: 17px;
+}
+.imgContainer{
+    display: flex;
+    height: 100px;
+    width: 250px;
+}
+.imgContainer > img{
+    height: 100px;
+}
+.productPrice{
+    font-size: 23px;
+    align-self: center;
+    width: 250px;
+}
+.removeBtn{
+    border: 1px solid rgb(210, 210, 210);
+    border-left: 0;
+    cursor: pointer;
+    background-color: rgb(152, 0, 0);
+    color: white;
+    transition: .2s ease-in-out ;
+}
+.removeBtn:hover{
+    background-color: rgb(202, 0, 0);
+}
+.orderBtn{
+    border-radius: 100px;
+    padding: 15px 10px 15px 10px;
+    width: 300px;
+    cursor: pointer;
+    border: 4px solid #484848;
+    background-color: transparent;
+    color: #484848;
+    font-size: 17px;
+    font-weight: bold;
+    transition: 0.1s ease-in-out;
+    align-self: center;
+}
+.orderBtn:hover{
+    border: 4px solid #484848;
+    background-color: #484848;
+    color: #ffffff;
+}
+.btnBlock{
+    display: flex; flex-direction: row;
+    justify-content: center;
+    margin-top: 50px;
+}
+.emptyCartText{
+    margin-top: 40px;
+    display: flex; flex-direction: row;
+    justify-content: center;
+}
+.emptyCartText>span{
+    font-size: 20px;
+}
+
+.valueBlock{
+    display: flex; flex-direction: row;
+    justify-content: center; align-content: center;
+    align-self: center; margin-right: 40px;
+    border: 1px solid rgb(172, 172, 172);
+    border-left: 0; border-right: 0;
+}
+.valueBtn{
+    cursor: pointer;
+    width: 30px; height: 30px;
+    font-size: 20px;
+    border: 0;
+}
+.valueBtn:hover{
+    background-color: rgba(119, 119, 119, 0.263);;
+    color: rgb(73, 73, 73);
+}
+.productValueText{
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    position: relative;
+    font-size: 20px;
+}
+
+.total{
+    margin-top: 40px;
+    font-size: 25px;
+}

@@ -1,0 +1,15 @@
+.imgSlider{
+    height: 600px;
+    width: auto;
+}
+.sliderBody{
+    display: flex;
+    justify-content: center; align-content: center;
+}
+.sliderContainer{
+    display: flex; flex-direction: row;
+    justify-content: center; align-content: center;
+}
+.sliderWrapper{
+    margin-top: 20px;
+}

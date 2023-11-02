@@ -1,0 +1,68 @@
+.footerWrapper{
+    background-color: #202020;
+    color: #c1c1c1;
+    height: 200px;
+    margin-top: 20px;
+    display: flex; flex-direction: column;
+    justify-content: center; align-content: center;
+}
+
+.menuFooterWrapper{
+    display: flex; flex-direction: row;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+.navItem{
+    margin: 10px;
+}
+.navItemText{
+    color:#d0d0d0;
+    text-decoration: none;
+    font-size: 20px;
+}
+.navItem:hover > .navItemText{
+    color: #ffffff;
+}
+.socialsWrapper{
+    display: flex; flex-direction: row;
+    justify-content: center;
+}
+.socialsImgI{
+    width: 50px;
+    height: 50px;
+    transition: 0.2s ease-in-out;
+    cursor: pointer;
+    margin-left: 20px;
+}
+.socialsImgF{
+    width: 50px;
+    height: 50px;
+    transition: 0.2s ease-in-out;
+    cursor: pointer;
+}
+.socialsImgT{
+    width: 50px;
+    height: 50px;
+    transition: 0.2s ease-in-out;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+.socialsImgI:hover{
+    src: url("../../images/instagram.png");
+}
+.socialsImgF:hover{
+    src: url("../../images/facebook.png");
+}
+.socialsImgT:hover{
+    src: url("../../images/tiktok.png");
+}
+
+.copyrightWrapper{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+.copyrightWrapper > span{
+    font-size: 15px;
+}

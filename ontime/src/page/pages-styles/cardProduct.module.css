@@ -1,0 +1,161 @@
+.cardProductWrapper{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+.cardProductWrapperInner{
+    width: 70%;
+}
+.productImageSection{
+    width: 500px;
+}
+.mainInfoBlock{
+    display: flex; flex-direction: row;
+    justify-content: space-between;
+}
+.inStockBlock{
+    display: flex;flex-direction: row;
+    align-items: center;
+}
+.infoBlock{
+    background-color: #e6e5e243;
+    border: 1px solid rgb(210, 210, 210);
+    width: 100%;
+    padding: 0 20px 0 20px;
+}
+.priceText{
+    font-size: 25px;
+    margin-right: 40px;
+}
+.nameBlock{
+    display: flex; flex-direction: column;
+    margin-bottom: 10px;
+}
+.productBrand{
+ font-size: 20px;
+ color: #49473f;
+ position: relative;
+ top: 8px;
+ font-style: italic;
+}
+.productName{
+    font-size: 30px;
+    font-weight: bold;
+}
+.buyBtn{
+    border: 0;
+    border-radius: 100px;
+    padding: 15px 10px 15px 10px;
+    width: 300px;
+    cursor: pointer;
+    border: 4px solid #484848;
+    background-color: transparent;
+    color: #484848;
+    font-size: 17px;
+    font-weight: bold;
+    transition: 0.1s ease-in-out;
+}
+.buyBtn:hover{
+    border: 4px solid #484848;
+    background-color: #484848;
+    color: #ffffff;
+}
+.personilizeBtn{
+    border-radius: 100px;
+    padding: 15px 10px 15px 10px;
+    width: 300px;
+    cursor: pointer;
+    border: 4px solid #b58d00;
+    background-color: #b58d00;
+    color: #ffffff;
+    font-size: 17px;
+    font-weight: bold;
+    transition: 0.1s ease-in-out;
+    margin-left: 20px;
+}
+.personilizeBtn:hover{
+    border: 4px solid #b58d00;
+    background-color: transparent;
+    color: #b58d00;
+}
+.btnBlock{
+    display: flex; flex-direction: row;
+    margin-top: 20px;
+    align-content: center; justify-content: center;
+}
+.separator{
+    width: 300px;
+    float: left;
+}
+.orderInfo{
+    margin: 20px 0 40px 0;
+}
+.visaImg{
+    height: 15px;
+}
+.mastercardImg{
+    height: 17px;
+}
+.payBlock{
+    display: flex; 
+    justify-content: center; align-content: center;
+    border: 1px solid #cdcdcd;
+    border-radius: 8px;
+    padding: 8px 5px 8px 5px;
+    width: 50px;
+    margin-right: 10px;
+}   
+.paySection{
+    display: flex; flex-direction: row;
+}
+
+.aboutSection{
+    margin-top: 100px;
+    background-color: #e6e5e243;
+    border: 1px solid rgb(210, 210, 210);
+    width: 100%;
+}
+.tabsBlock{
+    display: flex; flex-direction: row;
+    height: 50px; 
+}
+.tabContentBlock{
+    padding: 5px 10px 5px 10px;
+}
+.specificationBlock{
+    display: flex; flex-direction: column;
+}
+.specificationDetailsBlock{
+    display: flex; flex-direction: column;
+    width: 50%;
+}
+.specificationDetetailsSection{
+    display: flex; flex-direction: row;
+}
+.specificationItemBlock{
+    display: flex; flex-direction: row;
+    margin-bottom: 10px; margin-top: 5px;
+}
+.specificationCategory{
+    color: #5f5f5f;
+    font-size: 17px;
+    width: 200px
+}
+.specificationInner{
+    font-size: 17px;
+}
+.commentBody{
+    display: flex; flex-direction: column;
+    border-bottom: 1px solid #a6a6a6;
+    margin-top: 10px;
+}
+.commentUser{
+    margin-left: 15px;
+    color:#545454;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+.commentText{
+    margin-left: 10px;
+}
+
