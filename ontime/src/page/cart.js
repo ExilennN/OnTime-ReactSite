@@ -4,12 +4,11 @@ import Layout from "../component/layout/layout";
 import { useNavigate } from 'react-router-dom';
 
 import style from "./pages-styles/cart.module.css";
-import { Products } from './cardProduct';
 import "./pages-styles/catalogBtn.css";
 
 import { setCookie, getCookie, eraseCookie } from '../elements/cookies';
 
-let PRODUCTS = Products();
+let PRODUCTS;
 
 function numberWithSpaces(number) { return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");}
 
@@ -40,7 +39,7 @@ function CartItem(props){
   return(
     <div className={style.cartItemBody}>
       <div className={style.imgContainer}>
-        <img src={props.img}/>  
+        <img src={require(`../images/${props.img}`)}/>  
       </div>
       
       <div className={style.productNameGroup}>
@@ -59,7 +58,8 @@ function CartItem(props){
   );
 }
 
-function Cart() {
+function Cart(props) {
+  PRODUCTS = props.PRODUCTS;
   const orderHandle = () => {
     inCartProducts.map(product => eraseCookie(`${product.cookie.name}${product.cookie.brand}`));
     document.location.reload();
@@ -69,7 +69,7 @@ function Cart() {
   const navigate = useNavigate();
 
   let inCartProducts = getInCart();
-  let cartData = inCartProducts.map(product => <CartItem id={product.cookie.id} value={product.value} img={product.cookie.previewImage} brand={product.cookie.brand} name={product.cookie.name} price={product.cookie.price}></CartItem>)
+  let cartData = inCartProducts.map(product => <CartItem id={product.cookie.id} value={product.value} img={product.cookie.preview_image} brand={product.cookie.brand} name={product.cookie.name} price={product.cookie.price}></CartItem>)
   if (inCartProducts.length === 0) {
     cartData = 
     <div className={style.emptyCartText}>
@@ -78,7 +78,7 @@ function Cart() {
   }
 
   let totalPrice = 0;
-  inCartProducts.map(product => totalPrice+=parseInt((product.cookie.price).replace(/\s+/g, ''))*product.value);
+  inCartProducts.map(product => totalPrice+=product.cookie.price*product.value);
   return (
     <div>
       <Layout>

@@ -13,7 +13,7 @@ export default class ProductSliderImages extends Component {
       customPaging: function(i) {
         return (
           <a className={style.dotsPreviewWrapper}>
-            <img style={{height: "25px", opacity: "60%"}} src={Images[i]} />
+            <img style={{height: "25px", opacity: "60%"}} src={require("../images/" + Images[i].path)} />
           </a>
         );
       },
@@ -27,21 +27,13 @@ export default class ProductSliderImages extends Component {
     return (
       <div className={style.sliderWrapper}>
         <Slider {...settings}>
-          <div>
-            <div className={style.sliderBody}>
-              <img style={{height: "400px", width: "fit-content"}} src={Images[0]} />
+          {Images.map(image => 
+            <div>
+              <div className={style.sliderBody}>
+                <img style={{height: "400px", width: "fit-content"}} src={require("../images/" + image.path)} />
+              </div>
             </div>
-          </div>
-          <div>
-            <div className={style.sliderBody}>
-              <img style={{height: "400px", width: "fit-content"}} src={Images[1]} />
-            </div>
-          </div>
-          <div>
-            <div className={style.sliderBody}>
-              <img style={{height: "400px", width: "fit-content"}} src={Images[2]} />
-            </div>
-          </div>
+            )}
         </Slider>
       </div>
     );

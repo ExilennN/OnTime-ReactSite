@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Layout from "../component/layout/layout";
 import style from "./pages-styles/home.module.css";
 import Slider from "../elements/slider"
@@ -6,14 +6,14 @@ import Blog from "../elements/blog";
 
 import ProductPreview from '../elements/product-preview';
 
-import {Products} from "./cardProduct";
 import bg1 from "../images/watchesBG.webp";
 import bg2 from "../images/watchesBG1.jpg";
 
-let PRODUCTS = Products();
+let PRODUCTS;
 
-function showProducts(){
-  let productsData = PRODUCTS.map(product=><ProductPreview id={product.id} productImg={product.previewImage} name={product.name} brand={product.brand} productPrice={product.price}></ProductPreview>)
+function ShowProducts(){
+  let Products = PRODUCTS.slice(PRODUCTS.length-4)
+  let productsData =  Products.map(product=><ProductPreview id={product.id} productImg={product.preview_image} name={product.name} brand={product.brand} productPrice={product.price}></ProductPreview>)
   return(
     <>
       {productsData}
@@ -21,7 +21,10 @@ function showProducts(){
   )
 }
 
-function Home() {
+export function Products() { return PRODUCTS; }
+
+function Home(props) {
+  PRODUCTS = props.PRODUCTS;
   return (
     <div>
       <Layout>
@@ -36,7 +39,7 @@ function Home() {
         </div>
         <h1 className={style.previewProductSectionCaption}>Our New Products</h1>
         <div className={style.previewWatchesWrapper}>
-          {showProducts()}
+          {<ShowProducts/>}
         </div>
         <div style={{display: "flex", flexDirection: "column", alignItems: "center", backgroundColor: "#17130f"}}>
           <Blog bg={bg1} caption="Timeless Design and Style" text="The design philosophy behind luxury watches embodies timeless elegance. Classic designs endure through generations, maintaining their appeal and relevance. Whether it's the simplicity of a minimalist dial or the complexity of a chronograph, the aesthetic appeal of these watches is as much about their timeless design as it is about functionality."></Blog>
