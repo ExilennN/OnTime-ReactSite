@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Layout from "../component/layout/layout";
 
 import { useNavigate } from 'react-router-dom';
@@ -58,11 +58,46 @@ function CartItem(props){
   );
 }
 
+async function createOrder(inCartProducts){
+  let order_id;
+  let resp = await fetch('http://127.0.0.1:8000/api/orders', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      "charset": "utf-8"
+    },
+  })
+  .then(response => response.json())
+  .then(data =>order_id=data.id);
+
+  inCartProducts.map(product => {
+    fetch('http://127.0.0.1:8000/api/order-products', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      "charset": "utf-8"
+    },
+    body: JSON.stringify({
+      order_id: order_id,
+      product_id : product.cookie.id,
+      quantity: product.value
+    })
+  })
+  .then(response => response.json())
+  .then(()=>{
+    inCartProducts.map(product => eraseCookie(`${product.cookie.name}${product.cookie.brand}`));
+    document.location.reload();
+  })
+  });
+
+}
 function Cart(props) {
   PRODUCTS = props.PRODUCTS;
   const orderHandle = () => {
-    inCartProducts.map(product => eraseCookie(`${product.cookie.name}${product.cookie.brand}`));
-    document.location.reload();
+    if (inCartProducts.length > 0){ 
+      createOrder(inCartProducts)
+      }
+      
   }
 
   let link = "/category/watches";

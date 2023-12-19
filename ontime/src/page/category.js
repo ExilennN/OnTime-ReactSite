@@ -2,25 +2,21 @@ import React from 'react'
 import Layout from "../component/layout/layout";
 import style from "./pages-styles/category.module.css";
 
-import rLogo from "../images/rolexLogo.png";
-import oLogo from "../images/omegaLogo.png";
-import ppLogo from "../images/patekPLogo.png";
-
 import { useParams } from 'react-router-dom';
 import ProductPreview from '../elements/product-preview';
 import { useNavigate } from 'react-router-dom';
 
 let PRODUCTS;
-let TYPE;
+let BRANDS;
 
 
 
 function BrandItem(props){
-  let link = "/category/" + props.text;
+  let link = "/category/" + props.id;
   const navigate = useNavigate();
   return(
     <div className={style.brandBody}>
-      <img onClick={()=>navigate(link)} className={style.brandImg} src={props.img}/>
+      <img onClick={()=>navigate(link)} className={style.brandImg} src={require("../images/" + props.img)}/>
     </div>
   )
 
@@ -32,9 +28,7 @@ function Brands() {
     <div style={{display: "flex", flexDirection: "column"}}>
       <h1 style={{alignSelf:"center"}}>Brands</h1>
       <div className={style.brandBlock}>
-        <BrandItem img={rLogo} text="Rolex"></BrandItem>
-        <BrandItem img={oLogo} text="Omega"></BrandItem>
-        <BrandItem img={ppLogo} text="PatekPhilippe"></BrandItem>
+        {BRANDS.map(brand=><BrandItem id={brand.id} img={brand.image} text={brand.name}></BrandItem>)}
       </div>
     </div>
     
@@ -66,14 +60,12 @@ function Watches(props){
 
 function Category(props) {
   PRODUCTS = props.PRODUCTS;
+  BRANDS = props.BRANDS;
   let element;
   let {type} = useParams();
   if (type === "watches") { element = <Watches></Watches>}
-  else if (type === "Omega") { element = <Watches brand="5"></Watches>}
-  else if (type === "Rolex") { element = <Watches brand="6"></Watches>}
-  else if (type === "PatekPhilippe") { element = <Watches brand="7"></Watches>}
   else if (type === "brands") { element = <Brands></Brands>}
-  else {element = <Watches></Watches>}
+  else {element = <Watches brand={type}></Watches>}
   return (
     <div>
       <Layout>
