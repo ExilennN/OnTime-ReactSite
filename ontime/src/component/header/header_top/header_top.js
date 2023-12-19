@@ -12,6 +12,7 @@ function HeaderTop() {
         <Logo></Logo>
         <Search></Search>
         <Cart></Cart>
+        <a style={{width: "60px", height: "60px"}} href='http://127.0.0.1:8000/products'><i className="fas fa-bars"></i></a>
     </div>
   );
 }

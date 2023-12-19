@@ -3,7 +3,7 @@
 }
 .header-top-wrapper{
     display: flex; flex-direction: row;
-    align-content: center; justify-content: #343434;;
+    align-content: center; justify-content: #343434;
     background-color: black;
     color: #d0d0d0;
     align-items: center; justify-content: space-around;
