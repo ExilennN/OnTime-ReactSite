@@ -48,7 +48,8 @@ function CartItem(props){
       </div>
       <span className={style.productPrice}>$ {props.price}</span>
       <div className={style.valueBlock}>
-        <button onClick={() => valueChangeHandle(-1)} className={style.valueBtn}>{'<'}</button>
+        <button 
+        onClick={() => valueChangeHandle(-1)} className={style.valueBtn}>{'<'}</button>
         <span id='valueText' className={style.productValueText}>{props.value}</span>
         <button onClick={() => valueChangeHandle(1)} className={style.valueBtn}>{'>'}</button>
       </div>
